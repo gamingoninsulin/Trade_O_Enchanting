@@ -1,0 +1,576 @@
+{
+  "plugin.dependencies": "",
+  "plugin.version": "1.0-BETA",
+  "debug-build-mode": true,
+  "open-tab": 0,
+  "plugin-components": [
+    {
+      "children": [
+        {
+          "=": "org.bukkit.Bukkit#createMerchant(java.lang.String)",
+          "parameters": [{
+            "=": "expr-persistent-variable",
+            "parameters": ["ShadyTraderToken"]
+          }]
+        },
+        {
+          "=": "stat-comment",
+          "parameters": ["0 = air (stes shape and result)"]
+        },
+        {
+          "=": "stat-set-persistent-variable",
+          "parameters": [
+            "ShadyTraderToken",
+            {
+              "=": "org.bukkit.inventory.ShapedRecipe#ShapedRecipe(org.bukkit.NamespacedKey,org.bukkit.inventory.ItemStack)",
+              "parameters": [
+                {
+                  "=": "org.bukkit.inventory.ShapedRecipe#shape(java.lang.String...)",
+                  "parameters": [
+                    {
+                      "=": "expr-persistent-variable",
+                      "parameters": ["ShadyTraderToken"]
+                    },
+                    {
+                      "size": 3,
+                      "=": "expr-new-list",
+                      "parameters": [
+                        {
+                          "=": "expr-string",
+                          "parameters": ["00E"]
+                        },
+                        {
+                          "=": "expr-string",
+                          "parameters": ["PS0"]
+                        },
+                        {
+                          "=": "expr-string",
+                          "parameters": ["SP0"]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "=": "expr-new-named-item-with-lore",
+                  "parameters": [
+                    {"=": "org.bukkit.Material#TRIPWIRE_HOOK"},
+                    {
+                      "=": "expr-string",
+                      "parameters": ["Shady Trader Token"]
+                    },
+                    {
+                      "size": 3,
+                      "=": "expr-new-list",
+                      "parameters": [
+                        {
+                          "=": "expr-string",
+                          "parameters": ["Found Shady Trader token!"]
+                        },
+                        {
+                          "=": "expr-string",
+                          "parameters": ["Wonder what it does."]
+                        },
+                        {
+                          "=": "expr-string",
+                          "parameters": ["(R-click AIR)"]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "=": "stat-comment",
+          "parameters": ["adds the corresponding ingredients."]
+        },
+        {
+          "=": "stat-set-persistent-variable",
+          "parameters": [
+            "ShadyTraderToken",
+            {
+              "=": "org.bukkit.inventory.ShapedRecipe#setIngredient(char,org.bukkit.Material,int)",
+              "parameters": [
+                {
+                  "=": "expr-persistent-variable",
+                  "parameters": ["ShadyTraderToken"]
+                },
+                {
+                  "=": "expr-string",
+                  "parameters": ["S"]
+                },
+                {"=": "org.bukkit.Material#STICK"},
+                {
+                  "=": "expr-number",
+                  "parameters": ["1"]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "=": "stat-set-persistent-variable",
+          "parameters": [
+            "ShadyTraderToken",
+            {
+              "=": "org.bukkit.inventory.ShapedRecipe#setIngredient(char,org.bukkit.Material,int)",
+              "parameters": [
+                {
+                  "=": "expr-persistent-variable",
+                  "parameters": ["ShadyTraderToken"]
+                },
+                {
+                  "=": "expr-string",
+                  "parameters": ["P"]
+                },
+                {"=": "org.bukkit.Material#ENDER_PEARL"},
+                {
+                  "=": "expr-number",
+                  "parameters": ["1"]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "=": "stat-set-persistent-variable",
+          "parameters": [
+            "ShadyTraderToken",
+            {
+              "=": "org.bukkit.inventory.ShapedRecipe#setIngredient(char,org.bukkit.Material,int)",
+              "parameters": [
+                {
+                  "=": "expr-persistent-variable",
+                  "parameters": ["ShadyTraderToken"]
+                },
+                {
+                  "=": "expr-string",
+                  "parameters": ["E"]
+                },
+                {"=": "org.bukkit.Material#EMERALD"},
+                {
+                  "=": "expr-number",
+                  "parameters": ["1"]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "=": "org.bukkit.Bukkit#addRecipe(org.bukkit.inventory.Recipe)",
+          "parameters": [{
+            "=": "expr-persistent-variable",
+            "parameters": ["ShadyTraderToken"]
+          }]
+        }
+      ],
+      "=": "comp-plugin-enable"
+    },
+    {
+      "children": [{
+        "children": [
+          {
+            "=": "stat-set-local-variable",
+            "parameters": [
+              "ShadyTrader",
+              {
+                "=": "org.bukkit.Bukkit#createMerchant(java.lang.String)",
+                "parameters": [{
+                  "=": "expr-string",
+                  "parameters": ["Shady Trader"]
+                }]
+              }
+            ]
+          },
+          {
+            "=": "stat-comment",
+            "parameters": ["sets the results"]
+          },
+          {
+            "=": "stat-set-local-variable",
+            "parameters": [
+              "ShadyResult1",
+              {
+                "=": "org.bukkit.inventory.MerchantRecipe#MerchantRecipe(org.bukkit.inventory.ItemStack,int)",
+                "parameters": [
+                  {
+                    "=": "org.bukkit.inventory.ItemStack#ItemStack(org.bukkit.Material,int)",
+                    "parameters": [
+                      {"=": "org.bukkit.Material#EXPERIENCE_BOTTLE"},
+                      {
+                        "=": "expr-number",
+                        "parameters": ["8"]
+                      }
+                    ]
+                  },
+                  {
+                    "=": "expr-number",
+                    "parameters": ["4"]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "=": "stat-set-local-variable",
+            "parameters": [
+              "ShadyResult2",
+              {
+                "=": "org.bukkit.inventory.MerchantRecipe#MerchantRecipe(org.bukkit.inventory.ItemStack,int)",
+                "parameters": [
+                  {
+                    "=": "org.bukkit.inventory.ItemStack#ItemStack(org.bukkit.Material)",
+                    "parameters": [{
+                      "=": "org.bukkit.inventory.ItemStack#ItemStack(org.bukkit.Material,int)",
+                      "parameters": [
+                        {"=": "org.bukkit.Material#EXPERIENCE_BOTTLE"},
+                        {
+                          "=": "expr-number",
+                          "parameters": ["16"]
+                        }
+                      ]
+                    }]
+                  },
+                  {
+                    "=": "expr-number",
+                    "parameters": ["4"]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "=": "stat-set-local-variable",
+            "parameters": [
+              "ShadyResult3",
+              {
+                "=": "org.bukkit.inventory.MerchantRecipe#MerchantRecipe(org.bukkit.inventory.ItemStack,int)",
+                "parameters": [
+                  {
+                    "=": "org.bukkit.inventory.ItemStack#ItemStack(org.bukkit.Material)",
+                    "parameters": [{
+                      "=": "org.bukkit.inventory.ItemStack#ItemStack(org.bukkit.Material,int)",
+                      "parameters": [
+                        {"=": "org.bukkit.Material#EXPERIENCE_BOTTLE"},
+                        {
+                          "=": "expr-number",
+                          "parameters": ["32"]
+                        }
+                      ]
+                    }]
+                  },
+                  {
+                    "=": "expr-number",
+                    "parameters": ["4"]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "=": "stat-set-local-variable",
+            "parameters": [
+              "ShadyResult4",
+              {
+                "=": "org.bukkit.inventory.MerchantRecipe#MerchantRecipe(org.bukkit.inventory.ItemStack,int)",
+                "parameters": [
+                  {
+                    "=": "org.bukkit.inventory.ItemStack#ItemStack(org.bukkit.Material)",
+                    "parameters": [{
+                      "=": "org.bukkit.inventory.ItemStack#ItemStack(org.bukkit.Material,int)",
+                      "parameters": [
+                        {"=": "org.bukkit.Material#EXPERIENCE_BOTTLE"},
+                        {
+                          "=": "expr-number",
+                          "parameters": ["64"]
+                        }
+                      ]
+                    }]
+                  },
+                  {
+                    "=": "expr-number",
+                    "parameters": ["4"]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "=": "stat-comment",
+            "parameters": ["sets results trade conditions"]
+          },
+          {
+            "=": "org.bukkit.inventory.MerchantRecipe#addIngredient(org.bukkit.inventory.ItemStack)",
+            "parameters": [
+              {
+                "=": "expr-local-variable",
+                "parameters": ["ShadySesult1"]
+              },
+              {
+                "=": "org.bukkit.inventory.ItemStack#ItemStack(org.bukkit.Material,int)",
+                "parameters": [
+                  {"=": "org.bukkit.Material#GLASS_BOTTLE"},
+                  {
+                    "=": "expr-number",
+                    "parameters": ["8"]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "=": "org.bukkit.inventory.MerchantRecipe#addIngredient(org.bukkit.inventory.ItemStack)",
+            "parameters": [
+              {
+                "=": "expr-local-variable",
+                "parameters": ["ShadySesult1"]
+              },
+              {
+                "=": "org.bukkit.inventory.ItemStack#ItemStack(org.bukkit.Material,int)",
+                "parameters": [
+                  {"=": "org.bukkit.Material#EXPERIENCE_BOTTLE"},
+                  {
+                    "=": "expr-number",
+                    "parameters": ["8"]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "=": "org.bukkit.inventory.MerchantRecipe#addIngredient(org.bukkit.inventory.ItemStack)",
+            "parameters": [
+              {
+                "=": "expr-local-variable",
+                "parameters": ["ShadySesult2"]
+              },
+              {
+                "=": "org.bukkit.inventory.ItemStack#ItemStack(org.bukkit.Material,int)",
+                "parameters": [
+                  {"=": "org.bukkit.Material#GLASS_BOTTLE"},
+                  {
+                    "=": "expr-number",
+                    "parameters": ["16"]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "=": "org.bukkit.inventory.MerchantRecipe#addIngredient(org.bukkit.inventory.ItemStack)",
+            "parameters": [
+              {
+                "=": "expr-local-variable",
+                "parameters": ["ShadySesult2"]
+              },
+              {
+                "=": "org.bukkit.inventory.ItemStack#ItemStack(org.bukkit.Material,int)",
+                "parameters": [
+                  {"=": "org.bukkit.Material#EXPERIENCE_BOTTLE"},
+                  {
+                    "=": "expr-number",
+                    "parameters": ["16"]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "=": "org.bukkit.inventory.MerchantRecipe#addIngredient(org.bukkit.inventory.ItemStack)",
+            "parameters": [
+              {
+                "=": "expr-local-variable",
+                "parameters": ["ShadySesult3"]
+              },
+              {
+                "=": "org.bukkit.inventory.ItemStack#ItemStack(org.bukkit.Material,int)",
+                "parameters": [
+                  {"=": "org.bukkit.Material#GLASS_BOTTLE"},
+                  {
+                    "=": "expr-number",
+                    "parameters": ["32"]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "=": "org.bukkit.inventory.MerchantRecipe#addIngredient(org.bukkit.inventory.ItemStack)",
+            "parameters": [
+              {
+                "=": "expr-local-variable",
+                "parameters": ["ShadySesult3"]
+              },
+              {
+                "=": "org.bukkit.inventory.ItemStack#ItemStack(org.bukkit.Material,int)",
+                "parameters": [
+                  {"=": "org.bukkit.Material#EXPERIENCE_BOTTLE"},
+                  {
+                    "=": "expr-number",
+                    "parameters": ["32"]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "=": "org.bukkit.inventory.MerchantRecipe#addIngredient(org.bukkit.inventory.ItemStack)",
+            "parameters": [
+              {
+                "=": "expr-local-variable",
+                "parameters": ["ShadySesult4"]
+              },
+              {
+                "=": "org.bukkit.inventory.ItemStack#ItemStack(org.bukkit.Material,int)",
+                "parameters": [
+                  {"=": "org.bukkit.Material#GLASS_BOTTLE"},
+                  {
+                    "=": "expr-number",
+                    "parameters": ["64"]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "=": "org.bukkit.inventory.MerchantRecipe#addIngredient(org.bukkit.inventory.ItemStack)",
+            "parameters": [
+              {
+                "=": "expr-local-variable",
+                "parameters": ["ShadySesult4"]
+              },
+              {
+                "=": "org.bukkit.inventory.ItemStack#ItemStack(org.bukkit.Material,int)",
+                "parameters": [
+                  {"=": "org.bukkit.Material#EXPERIENCE_BOTTLE"},
+                  {
+                    "=": "expr-number",
+                    "parameters": ["64"]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "=": "stat-comment",
+            "parameters": ["gives the trader to Merchant"]
+          },
+          {
+            "=": "org.bukkit.inventory.Merchant#setRecipes(java.util.List<org.bukkit.inventory.MerchantRecipe>)",
+            "parameters": [
+              {
+                "=": "expr-local-variable",
+                "parameters": ["ShayTrader"]
+              },
+              {
+                "size": 4,
+                "=": "expr-new-list",
+                "parameters": [
+                  {
+                    "=": "expr-local-variable",
+                    "parameters": ["Shadyresult1"]
+                  },
+                  {
+                    "=": "expr-local-variable",
+                    "parameters": ["Shadyresult2"]
+                  },
+                  {
+                    "=": "expr-local-variable",
+                    "parameters": ["Shadyresult3"]
+                  },
+                  {
+                    "=": "expr-local-variable",
+                    "parameters": ["Shadyresult4"]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "=": "stat-comment",
+            "parameters": ["open he merchant window"]
+          },
+          {
+            "=": "org.bukkit.entity.HumanEntity#openMerchant(org.bukkit.inventory.Merchant,boolean)",
+            "parameters": [
+              {"=": "org.bukkit.event.player.PlayerInteractEvent#getPlayer()"},
+              {
+                "=": "expr-local-variable",
+                "parameters": ["ShadyTrader"]
+              },
+              {
+                "=": "expr-boolean",
+                "parameters": ["true"]
+              }
+            ]
+          },
+          {
+            "=": "stat-comment",
+            "parameters": ["gives the item back after it is used"]
+          },
+          {
+            "=": "org.bukkit.entity.HumanEntity#setItemInHand(org.bukkit.inventory.ItemStack)",
+            "parameters": [
+              {"=": "org.bukkit.event.player.PlayerInteractEvent#getPlayer()"},
+              {
+                "=": "expr-new-named-item-with-lore",
+                "parameters": [
+                  {"=": "org.bukkit.Material#TRIPWIRE_HOOK"},
+                  {
+                    "=": "expr-string",
+                    "parameters": ["Shady Trader Token"]
+                  },
+                  {
+                    "size": 3,
+                    "=": "expr-new-list",
+                    "parameters": [
+                      {
+                        "=": "expr-string",
+                        "parameters": ["Found Shady Trader token!"]
+                      },
+                      {
+                        "=": "expr-string",
+                        "parameters": ["Wonder what it does."]
+                      },
+                      {
+                        "=": "expr-string",
+                        "parameters": ["(L-click AIR)"]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "=": "stat-if-statement",
+        "parameters": [
+          {
+            "=": "expr-is-equal",
+            "parameters": [
+              {"=": "org.bukkit.event.player.PlayerInteractEvent#getAction()"},
+              {"=": "org.bukkit.event.block.Action#LEFT_CLICK_AIR"}
+            ]
+          },
+          "normal"
+        ]
+      }],
+      "=": "org.bukkit.event.player.PlayerInteractEvent",
+      "parameters": ["NORMAL"]
+    }
+  ],
+  "plugin.soft-dependencies": "",
+  "plugin.name": "TradeOEnchanting",
+  "current-plugin-component": 0,
+  "plugin.author": "GamingOnInsulin",
+  "plugin.description": "make an item to open a traders inventory to buy enchanting bottles",
+  "plugin.permissions": "",
+  "open-plugin-components": [
+    1,
+    0
+  ],
+  "plugin.website": "https://github.com/gamingoninsulin/Trade_O_Enchanting"
+}
