@@ -1,5 +1,5 @@
 name: "TradeOEnchanting"
-version: "1.0-BETA"
+version: "1.1"
 main: "vb.$tradeoenchanting.PluginMain"
 api-version: 1.13
 author: "GamingOnInsulin"
