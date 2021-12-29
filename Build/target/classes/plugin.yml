@@ -1,9 +1,0 @@
-name: "TradeOEnchanting"
-version: "1.1"
-main: "vb.$tradeoenchanting.PluginMain"
-api-version: 1.13
-author: "GamingOnInsulin"
-description: "make an item to open a traders inventory to buy enchanting bottles"
-website: "https://github.com/gamingoninsulin/Trade_O_Enchanting"
-commands:
-permissions:
